@@ -30,7 +30,8 @@ int primo (int num){
 	divisor = divisor + 2;		/* testamos so' os  impares: 3, 5, 7... */
    }
   
-
+ 
+	
  return Primo;
 } 
 
