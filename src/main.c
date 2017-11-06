@@ -42,9 +42,9 @@ int primo (int num){
 	/*  EhPrimo = FALSE se o numero dado nao 'e primo        */
    
 
-    printf("Forneca um numero inteiro positivo ===> ");
-    scanf("%d", &n);
-    printf("Inteiro dado = %d \n", n);
+   // printf("Forneca um numero inteiro positivo ===> ");
+    scanf("%d", &num);
+   // printf("Inteiro dado = %d \n", num);
 
 
     if (num <= 1 || (num != 2 && num % 2 == 0))
@@ -60,10 +60,7 @@ int primo (int num){
 	d = d + 2;		/* testamos so' os  impares: 3, 5, 7... */
     }
 
-    if (EhPrimo)
-	printf("%d e' primo \n", num);
-    else
-	printf(" %d nao e' primo \n", num);
+   
  return EhPrimo;
 } 
 
