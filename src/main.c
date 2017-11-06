@@ -6,12 +6,64 @@
  */
 
 #include <stdio.h>
+#define TRUE 1
+#define FALSE 0
+
+
+int primo (int num){		
+   int divisor;		        
+  int numdiv=0;     
+  int Primo;			
+/* Primo = TRUE --> primo */
+/* Primo = FALSE --> nao é primo */
+   
+     
+    for(divisor=1; divisor < num+1; divisor++){
+              if(num % divisor == 0){
+                   numdiv++;
+              }                    
+    }
+    
+	      	      
+    if (numdiv==2){
+        Primo = 1; 
+//	printf("é primo\n");
+    }
+
+    else{
+	Primo = 0; 
+//	printf("não é primo\n");
+    }
+
+ return Primo;
+} 
 
 int main() {
 
-  int x, y;
+   int num;
 
-  scanf("%d %d\n", &x, &y);
-  printf("%d\n", x + 200);
-  return 0;
+   FILE *pipe;	
+   pipe = popen ("sort -n -r", "w");
+
+   while (1){
+ 
+	scanf ("%d", &num);	  	
+// só aceita numeros positivo
+	if (num == -1){	
+	     // printf("acabou\n");  		
+	      break;
+  	}
+	else { 			
+  
+             if (primo (num) == 0){  			
+		fprintf (pipe,"%d\n",num);	  			  				  				  			//printf("estou aqui\n");
+ 	  				
+              }
+	}
+
+   }
+
+   pclose(pipe); 
+  
+   return 0;
 }
