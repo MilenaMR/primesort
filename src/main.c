@@ -13,25 +13,20 @@
 int primo (int num){		
   int divisor;		        
   int numdiv=0;     
-  int Primo;			
+  int Primo=1;	// Supomos inicialmente que todos são primos		
 /* Primo = TRUE --> primo */
 /* Primo = FALSE --> nao é primo */
    
     if (num <= 1 || (num != 2 && num % 2 == 0)){
-	Primo = FALSE;}	/* nenhum numero inteiro <= 1 ou par > 2 e' primo */
-    else{
-	Primo = TRUE;		/* o numero e' primo ate que se prove o contrario */
-    }
-
+	Primo = FALSE;}	/* nenhum numero inteiro <= 1 ou par > 2 é primo */
+    
     divisor = 3;
-    while (Primo  && divisor <= num/2) {
-	if (num % divisor == 0)
-	    Primo=0;
-	divisor = divisor + 2;		/* testamos so' os  impares: 3, 5, 7... */
+    while (Primo && divisor <= num/2) {
+	if (num % divisor == 0){
+	    Primo=0;}
+	divisor = divisor + 2;	
    }
-  
- 
-	
+  	
  return Primo;
 } 
 
